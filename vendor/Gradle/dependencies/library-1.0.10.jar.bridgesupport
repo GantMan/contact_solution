@@ -1,0 +1,467 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name="com/android/volley/AuthFailureError" super="com/android/volley/VolleyError">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Intent;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/NetworkResponse;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/Exception;)V"/>
+<method name="getResolutionIntent" type="()Landroid/content/Intent;"/>
+<method name="getMessage" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/android/volley/Cache$Entry" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="isExpired" type="()Z"/>
+<method name="refreshNeeded" type="()Z"/>
+</class>
+<class name="com/android/volley/CacheDispatcher" super="java/lang/Thread">
+<method name="&lt;init&gt;" type="(Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/BlockingQueue;Lcom/android/volley/Cache;Lcom/android/volley/ResponseDelivery;)V"/>
+<method name="quit" type="()V"/>
+<method name="run" type="()V"/>
+<method name="access$000" type="(Lcom/android/volley/CacheDispatcher;)Ljava/util/concurrent/BlockingQueue;" class_method="true"/>
+</class>
+<class name="com/android/volley/NetworkDispatcher" super="java/lang/Thread">
+<method name="&lt;init&gt;" type="(Ljava/util/concurrent/BlockingQueue;Lcom/android/volley/Network;Lcom/android/volley/Cache;Lcom/android/volley/ResponseDelivery;)V"/>
+<method name="quit" type="()V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/NetworkError" super="com/android/volley/VolleyError">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/NetworkResponse;)V"/>
+</class>
+<class name="com/android/volley/NetworkResponse" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(I[BLjava/util/Map;ZJ)V"/>
+<method name="&lt;init&gt;" type="(I[BLjava/util/Map;Z)V"/>
+<method name="&lt;init&gt;" type="([B)V"/>
+<method name="&lt;init&gt;" type="([BLjava/util/Map;)V"/>
+</class>
+<class name="com/android/volley/NoConnectionError" super="com/android/volley/NetworkError">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+</class>
+<class name="com/android/volley/ParseError" super="com/android/volley/VolleyError">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/NetworkResponse;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+</class>
+<class name="com/android/volley/Request$Priority" super="java/lang/Enum">
+<method name="values" type="()[Lcom/android/volley/Request$Priority;" class_method="true"/>
+<method name="valueOf" type="(Ljava/lang/String;)Lcom/android/volley/Request$Priority;" class_method="true"/>
+</class>
+<class name="com/android/volley/RequestQueue" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/Cache;Lcom/android/volley/Network;ILcom/android/volley/ResponseDelivery;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/Cache;Lcom/android/volley/Network;I)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/Cache;Lcom/android/volley/Network;)V"/>
+<method name="start" type="()V"/>
+<method name="stop" type="()V"/>
+<method name="getSequenceNumber" type="()I"/>
+<method name="getCache" type="()Lcom/android/volley/Cache;"/>
+<method name="cancelAll" type="(Lcom/android/volley/RequestQueue$RequestFilter;)V"/>
+<method name="cancelAll" type="(Ljava/lang/Object;)V"/>
+<method name="add" type="(Lcom/android/volley/Request;)Lcom/android/volley/Request;"/>
+<method name="finish" type="(Lcom/android/volley/Request;)V"/>
+</class>
+<class name="com/android/volley/Response" super="java/lang/Object">
+<method name="success" type="(Ljava/lang/Object;Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Response;" class_method="true"/>
+<method name="error" type="(Lcom/android/volley/VolleyError;)Lcom/android/volley/Response;" class_method="true"/>
+<method name="isSuccess" type="()Z"/>
+</class>
+<class name="com/android/volley/ServerError" super="com/android/volley/VolleyError">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/NetworkResponse;)V"/>
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="com/android/volley/TimeoutError" super="com/android/volley/VolleyError">
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="com/android/volley/toolbox/ByteArrayPool" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(I)V"/>
+<method name="getBuf" type="(I)[B"/>
+<method name="returnBuf" type="([B)V"/>
+</class>
+<class name="com/android/volley/toolbox/ClearCacheRequest" super="com/android/volley/Request">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/Cache;Ljava/lang/Runnable;)V"/>
+<method name="isCanceled" type="()Z"/>
+<method name="getPriority" type="()Lcom/android/volley/Request$Priority;"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+<method name="deliverResponse" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/android/volley/toolbox/DiskBasedCache$1" super="java/lang/Object">
+</class>
+<class name="com/android/volley/toolbox/DiskBasedCache$CacheHeader" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V"/>
+<method name="readHeader" type="(Ljava/io/InputStream;)Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;" class_method="true"/>
+<method name="toCacheEntry" type="([B)Lcom/android/volley/Cache$Entry;"/>
+<method name="writeHeader" type="(Ljava/io/OutputStream;)Z"/>
+</class>
+<class name="com/android/volley/toolbox/DiskBasedCache$CountingInputStream" super="java/io/FilterInputStream">
+<method name="read" type="()I"/>
+<method name="read" type="([BII)I"/>
+<method name="&lt;init&gt;" type="(Ljava/io/InputStream;Lcom/android/volley/toolbox/DiskBasedCache$1;)V"/>
+<method name="access$100" type="(Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;)I" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/HttpClientStack$HttpPatch" super="org/apache/http/client/methods/HttpEntityEnclosingRequestBase">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/net/URI;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="getMethod" type="()Ljava/lang/String;"/>
+</class>
+<class name="com/android/volley/toolbox/HttpHeaderParser" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="parseCacheHeaders" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Cache$Entry;" class_method="true"/>
+<method name="parseDateAsEpoch" type="(Ljava/lang/String;)J" class_method="true"/>
+<method name="parseCharset" type="(Ljava/util/Map;)Ljava/lang/String;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$BatchedImageRequest" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ImageLoader;Lcom/android/volley/Request;Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)V"/>
+<method name="setError" type="(Lcom/android/volley/VolleyError;)V"/>
+<method name="getError" type="()Lcom/android/volley/VolleyError;"/>
+<method name="addContainer" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)V"/>
+<method name="removeContainerAndCancelIfNecessary" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Z"/>
+<method name="access$002" type="(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;" class_method="true"/>
+<method name="access$300" type="(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/LinkedList;" class_method="true"/>
+<method name="access$000" type="(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Landroid/graphics/Bitmap;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$ImageContainer" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ImageLoader;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader$ImageListener;)V"/>
+<method name="cancelRequest" type="()V"/>
+<method name="getBitmap" type="()Landroid/graphics/Bitmap;"/>
+<method name="getRequestUrl" type="()Ljava/lang/String;"/>
+<method name="access$400" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Lcom/android/volley/toolbox/ImageLoader$ImageListener;" class_method="true"/>
+<method name="access$502" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/RequestQueue;Lcom/android/volley/toolbox/ImageLoader$ImageCache;)V"/>
+<method name="getImageListener" type="(Landroid/widget/ImageView;II)Lcom/android/volley/toolbox/ImageLoader$ImageListener;" class_method="true"/>
+<method name="isCached" type="(Ljava/lang/String;II)Z"/>
+<method name="get" type="(Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader$ImageListener;)Lcom/android/volley/toolbox/ImageLoader$ImageContainer;"/>
+<method name="get" type="(Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader$ImageListener;II)Lcom/android/volley/toolbox/ImageLoader$ImageContainer;"/>
+<method name="makeImageRequest" type="(Ljava/lang/String;IILjava/lang/String;)Lcom/android/volley/Request;"/>
+<method name="setBatchedResponseDelay" type="(I)V"/>
+<method name="onGetImageSuccess" type="(Ljava/lang/String;Landroid/graphics/Bitmap;)V"/>
+<method name="onGetImageError" type="(Ljava/lang/String;Lcom/android/volley/VolleyError;)V"/>
+<method name="access$100" type="(Lcom/android/volley/toolbox/ImageLoader;)Ljava/util/HashMap;" class_method="true"/>
+<method name="access$200" type="(Lcom/android/volley/toolbox/ImageLoader;)Ljava/util/HashMap;" class_method="true"/>
+<method name="access$602" type="(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/Runnable;)Ljava/lang/Runnable;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ImageRequest" super="com/android/volley/Request">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/android/volley/Response$Listener;IILandroid/graphics/Bitmap$Config;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="getPriority" type="()Lcom/android/volley/Request$Priority;"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+<method name="deliverResponse" type="(Landroid/graphics/Bitmap;)V"/>
+<method name="findBestSampleSize" type="(IIII)I" class_method="true"/>
+<method name="deliverResponse" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/android/volley/toolbox/JsonArrayRequest" super="com/android/volley/toolbox/JsonRequest">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+</class>
+<class name="com/android/volley/toolbox/JsonObjectRequest" super="com/android/volley/toolbox/JsonRequest">
+<method name="&lt;init&gt;" type="(ILjava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+</class>
+<class name="com/android/volley/toolbox/JsonRequest" super="com/android/volley/Request">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="&lt;init&gt;" type="(ILjava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="deliverResponse" type="(Ljava/lang/Object;)V"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+<method name="getPostBodyContentType" type="()Ljava/lang/String;"/>
+<method name="getPostBody" type="()[B"/>
+<method name="getBodyContentType" type="()Ljava/lang/String;"/>
+<method name="getBody" type="()[B"/>
+</class>
+<class name="com/android/volley/toolbox/NetworkImageView" super="android/widget/ImageView">
+<method name="&lt;init&gt;" type="(Landroid/content/Context;)V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Landroid/util/AttributeSet;)V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Landroid/util/AttributeSet;I)V"/>
+<method name="setImageUrl" type="(Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader;)V"/>
+<method name="getImageURL" type="()Ljava/lang/String;"/>
+<method name="setDefaultImageResId" type="(I)V"/>
+<method name="setErrorImageResId" type="(I)V"/>
+<method name="loadImageIfNecessary" type="(Z)V"/>
+<method name="onLayout" type="(ZIIII)V"/>
+<method name="onDetachedFromWindow" type="()V"/>
+<method name="drawableStateChanged" type="()V"/>
+<method name="access$000" type="(Lcom/android/volley/toolbox/NetworkImageView;)I" class_method="true"/>
+<method name="access$100" type="(Lcom/android/volley/toolbox/NetworkImageView;)I" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/PoolingByteArrayOutputStream" super="java/io/ByteArrayOutputStream">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ByteArrayPool;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ByteArrayPool;I)V"/>
+<method name="close" type="()V"/>
+<method name="finalize" type="()V"/>
+<method name="write" type="([BII)V"/>
+<method name="write" type="(I)V"/>
+</class>
+<class name="com/android/volley/toolbox/StringRequest" super="com/android/volley/Request">
+<method name="&lt;init&gt;" type="(ILjava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="deliverResponse" type="(Ljava/lang/String;)V"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+<method name="deliverResponse" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/android/volley/toolbox/Volley" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="newRequestQueue" type="(Landroid/content/Context;Lcom/android/volley/toolbox/HttpStack;I)Lcom/android/volley/RequestQueue;" class_method="true"/>
+<method name="newRequestQueue" type="(Landroid/content/Context;I)Lcom/android/volley/RequestQueue;" class_method="true"/>
+<method name="newRequestQueue" type="(Landroid/content/Context;Lcom/android/volley/toolbox/HttpStack;)Lcom/android/volley/RequestQueue;" class_method="true"/>
+<method name="newRequestQueue" type="(Landroid/content/Context;)Lcom/android/volley/RequestQueue;" class_method="true"/>
+</class>
+<class name="com/android/volley/VolleyError" super="java/lang/Exception">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/NetworkResponse;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/Throwable;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/Throwable;)V"/>
+<method name="setNetworkTimeMs" type="(J)V"/>
+<method name="getNetworkTimeMs" type="()J"/>
+</class>
+<class name="com/android/volley/VolleyLog$MarkerLog$Marker" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;JJ)V"/>
+</class>
+<class name="com/android/volley/VolleyLog$MarkerLog" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="add" type="(Ljava/lang/String;J)V"/>
+<method name="finish" type="(Ljava/lang/String;)V"/>
+<method name="finalize" type="()V"/>
+</class>
+<class name="com/android/volley/VolleyLog" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="setTag" type="(Ljava/lang/String;)V" class_method="true"/>
+<method name="v" type="(Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+<method name="d" type="(Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+<method name="e" type="(Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+<method name="e" type="(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+<method name="wtf" type="(Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+<method name="wtf" type="(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V" class_method="true"/>
+</class>
+<class name="com/android/volley/CacheDispatcher$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/CacheDispatcher;Lcom/android/volley/Request;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/DefaultRetryPolicy" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(IIF)V"/>
+<method name="getCurrentTimeout" type="()I"/>
+<method name="getCurrentRetryCount" type="()I"/>
+<method name="getBackoffMultiplier" type="()F"/>
+<method name="retry" type="(Lcom/android/volley/VolleyError;)V"/>
+<method name="hasAttemptRemaining" type="()Z"/>
+</class>
+<class name="com/android/volley/ExecutorDelivery$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/ExecutorDelivery;Landroid/os/Handler;)V"/>
+<method name="execute" type="(Ljava/lang/Runnable;)V"/>
+</class>
+<class name="com/android/volley/ExecutorDelivery$ResponseDeliveryRunnable" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/ExecutorDelivery;Lcom/android/volley/Request;Lcom/android/volley/Response;Ljava/lang/Runnable;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/ExecutorDelivery" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Landroid/os/Handler;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/util/concurrent/Executor;)V"/>
+<method name="postResponse" type="(Lcom/android/volley/Request;Lcom/android/volley/Response;)V"/>
+<method name="postResponse" type="(Lcom/android/volley/Request;Lcom/android/volley/Response;Ljava/lang/Runnable;)V"/>
+<method name="postError" type="(Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V"/>
+</class>
+<class name="com/android/volley/Request$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/Request;Ljava/lang/String;J)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/Request" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="&lt;init&gt;" type="(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V"/>
+<method name="getMethod" type="()I"/>
+<method name="setTag" type="(Ljava/lang/Object;)Lcom/android/volley/Request;"/>
+<method name="getTag" type="()Ljava/lang/Object;"/>
+<method name="getErrorListener" type="()Lcom/android/volley/Response$ErrorListener;"/>
+<method name="getTrafficStatsTag" type="()I"/>
+<method name="setRetryPolicy" type="(Lcom/android/volley/RetryPolicy;)Lcom/android/volley/Request;"/>
+<method name="addMarker" type="(Ljava/lang/String;)V"/>
+<method name="finish" type="(Ljava/lang/String;)V"/>
+<method name="setRequestQueue" type="(Lcom/android/volley/RequestQueue;)Lcom/android/volley/Request;"/>
+<method name="setSequence" type="(I)Lcom/android/volley/Request;"/>
+<method name="getSequence" type="()I"/>
+<method name="getUrl" type="()Ljava/lang/String;"/>
+<method name="getOriginUrl" type="()Ljava/lang/String;"/>
+<method name="setRedirectUrl" type="(Ljava/lang/String;)V"/>
+<method name="getCacheKey" type="()Ljava/lang/String;"/>
+<method name="setCacheEntry" type="(Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Request;"/>
+<method name="getCacheEntry" type="()Lcom/android/volley/Cache$Entry;"/>
+<method name="cancel" type="()V"/>
+<method name="isCanceled" type="()Z"/>
+<method name="getHeaders" type="()Ljava/util/Map;"/>
+<method name="getPostParams" type="()Ljava/util/Map;"/>
+<method name="getPostParamsEncoding" type="()Ljava/lang/String;"/>
+<method name="getPostBodyContentType" type="()Ljava/lang/String;"/>
+<method name="getPostBody" type="()[B"/>
+<method name="getParams" type="()Ljava/util/Map;"/>
+<method name="getParamsEncoding" type="()Ljava/lang/String;"/>
+<method name="getBodyContentType" type="()Ljava/lang/String;"/>
+<method name="getBody" type="()[B"/>
+<method name="setShouldCache" type="(Z)Lcom/android/volley/Request;"/>
+<method name="shouldCache" type="()Z"/>
+<method name="getPriority" type="()Lcom/android/volley/Request$Priority;"/>
+<method name="getTimeoutMs" type="()I"/>
+<method name="getRetryPolicy" type="()Lcom/android/volley/RetryPolicy;"/>
+<method name="markDelivered" type="()V"/>
+<method name="hasHadResponseDelivered" type="()Z"/>
+<method name="parseNetworkResponse" type="(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;"/>
+<method name="parseNetworkError" type="(Lcom/android/volley/VolleyError;)Lcom/android/volley/VolleyError;"/>
+<method name="deliverResponse" type="(Ljava/lang/Object;)V"/>
+<method name="deliverError" type="(Lcom/android/volley/VolleyError;)V"/>
+<method name="compareTo" type="(Lcom/android/volley/Request;)I"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="compareTo" type="(Ljava/lang/Object;)I"/>
+<method name="access$000" type="(Lcom/android/volley/Request;)Lcom/android/volley/VolleyLog$MarkerLog;" class_method="true"/>
+</class>
+<class name="com/android/volley/RequestQueue$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/RequestQueue;Ljava/lang/Object;)V"/>
+<method name="apply" type="(Lcom/android/volley/Request;)Z"/>
+</class>
+<class name="com/android/volley/toolbox/AndroidAuthenticator" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;Z)V"/>
+<method name="getAccount" type="()Landroid/accounts/Account;"/>
+<method name="getAuthToken" type="()Ljava/lang/String;"/>
+<method name="invalidateAuthToken" type="(Ljava/lang/String;)V"/>
+</class>
+<class name="com/android/volley/toolbox/BasicNetwork" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/HttpStack;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/HttpStack;Lcom/android/volley/toolbox/ByteArrayPool;)V"/>
+<method name="performRequest" type="(Lcom/android/volley/Request;)Lcom/android/volley/NetworkResponse;"/>
+<method name="logError" type="(Ljava/lang/String;Ljava/lang/String;J)V"/>
+<method name="convertHeaders" type="([Lorg/apache/http/Header;)Ljava/util/Map;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ByteArrayPool$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="compare" type="([B[B)I"/>
+<method name="compare" type="(Ljava/lang/Object;Ljava/lang/Object;)I"/>
+</class>
+<class name="com/android/volley/toolbox/DiskBasedCache" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Ljava/io/File;I)V"/>
+<method name="&lt;init&gt;" type="(Ljava/io/File;)V"/>
+<method name="clear" type="()V"/>
+<method name="get" type="(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;"/>
+<method name="initialize" type="()V"/>
+<method name="invalidate" type="(Ljava/lang/String;Z)V"/>
+<method name="put" type="(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V"/>
+<method name="remove" type="(Ljava/lang/String;)V"/>
+<method name="getFileForKey" type="(Ljava/lang/String;)Ljava/io/File;"/>
+<method name="writeInt" type="(Ljava/io/OutputStream;I)V" class_method="true"/>
+<method name="readInt" type="(Ljava/io/InputStream;)I" class_method="true"/>
+<method name="writeLong" type="(Ljava/io/OutputStream;J)V" class_method="true"/>
+<method name="readLong" type="(Ljava/io/InputStream;)J" class_method="true"/>
+<method name="writeString" type="(Ljava/io/OutputStream;Ljava/lang/String;)V" class_method="true"/>
+<method name="readString" type="(Ljava/io/InputStream;)Ljava/lang/String;" class_method="true"/>
+<method name="writeStringStringMap" type="(Ljava/util/Map;Ljava/io/OutputStream;)V" class_method="true"/>
+<method name="readStringStringMap" type="(Ljava/io/InputStream;)Ljava/util/Map;" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/HttpClientStack" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lorg/apache/http/client/HttpClient;)V"/>
+<method name="performRequest" type="(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/HttpResponse;"/>
+<method name="createHttpRequest" type="(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/client/methods/HttpUriRequest;" class_method="true"/>
+<method name="onPrepareRequest" type="(Lorg/apache/http/client/methods/HttpUriRequest;)V"/>
+</class>
+<class name="com/android/volley/toolbox/HurlStack" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/HurlStack$UrlRewriter;)V"/>
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/HurlStack$UrlRewriter;Ljavax/net/ssl/SSLSocketFactory;)V"/>
+<method name="performRequest" type="(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/HttpResponse;"/>
+<method name="createConnection" type="(Ljava/net/URL;)Ljava/net/HttpURLConnection;"/>
+<method name="setConnectionParametersForRequest" type="(Ljava/net/HttpURLConnection;Lcom/android/volley/Request;)V" class_method="true"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(ILandroid/widget/ImageView;I)V"/>
+<method name="onErrorResponse" type="(Lcom/android/volley/VolleyError;)V"/>
+<method name="onResponse" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Z)V"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$2" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/String;)V"/>
+<method name="onResponse" type="(Landroid/graphics/Bitmap;)V"/>
+<method name="onResponse" type="(Ljava/lang/Object;)V"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$3" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/String;)V"/>
+<method name="onErrorResponse" type="(Lcom/android/volley/VolleyError;)V"/>
+</class>
+<class name="com/android/volley/toolbox/ImageLoader$4" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/ImageLoader;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/toolbox/NetworkImageView$1$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/NetworkImageView$1;Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="com/android/volley/toolbox/NetworkImageView$1" super="java/lang/Object">
+<method name="&lt;init&gt;" type="(Lcom/android/volley/toolbox/NetworkImageView;Z)V"/>
+<method name="onErrorResponse" type="(Lcom/android/volley/VolleyError;)V"/>
+<method name="onResponse" type="(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Z)V"/>
+</class>
+<class name="com/android/volley/toolbox/NoCache" super="java/lang/Object">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="clear" type="()V"/>
+<method name="get" type="(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;"/>
+<method name="put" type="(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V"/>
+<method name="invalidate" type="(Ljava/lang/String;Z)V"/>
+<method name="remove" type="(Ljava/lang/String;)V"/>
+<method name="initialize" type="()V"/>
+</class>
+<class name="com/android/volley/toolbox/RequestFuture" super="java/lang/Object">
+<method name="newFuture" type="()Lcom/android/volley/toolbox/RequestFuture;" class_method="true"/>
+<method name="setRequest" type="(Lcom/android/volley/Request;)V"/>
+<method name="cancel" type="(Z)Z"/>
+<method name="get" type="()Ljava/lang/Object;"/>
+<method name="get" type="(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;"/>
+<method name="isCancelled" type="()Z"/>
+<method name="isDone" type="()Z"/>
+<method name="onResponse" type="(Ljava/lang/Object;)V"/>
+<method name="onErrorResponse" type="(Lcom/android/volley/VolleyError;)V"/>
+</class>
+<interface name="com/android/volley/Cache">
+<method name="get" type="(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;"/>
+<method name="put" type="(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V"/>
+<method name="initialize" type="()V"/>
+<method name="invalidate" type="(Ljava/lang/String;Z)V"/>
+<method name="remove" type="(Ljava/lang/String;)V"/>
+<method name="clear" type="()V"/>
+</interface>
+<interface name="com/android/volley/Network">
+<method name="performRequest" type="(Lcom/android/volley/Request;)Lcom/android/volley/NetworkResponse;"/>
+</interface>
+<interface name="com/android/volley/Request$Method">
+</interface>
+<interface name="com/android/volley/RequestQueue$RequestFilter">
+<method name="apply" type="(Lcom/android/volley/Request;)Z"/>
+</interface>
+<interface name="com/android/volley/Response$ErrorListener">
+<method name="onErrorResponse" type="(Lcom/android/volley/VolleyError;)V"/>
+</interface>
+<interface name="com/android/volley/Response$Listener">
+<method name="onResponse" type="(Ljava/lang/Object;)V"/>
+</interface>
+<interface name="com/android/volley/ResponseDelivery">
+<method name="postResponse" type="(Lcom/android/volley/Request;Lcom/android/volley/Response;)V"/>
+<method name="postResponse" type="(Lcom/android/volley/Request;Lcom/android/volley/Response;Ljava/lang/Runnable;)V"/>
+<method name="postError" type="(Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V"/>
+</interface>
+<interface name="com/android/volley/RetryPolicy">
+<method name="getCurrentTimeout" type="()I"/>
+<method name="getCurrentRetryCount" type="()I"/>
+<method name="retry" type="(Lcom/android/volley/VolleyError;)V"/>
+</interface>
+<interface name="com/android/volley/toolbox/Authenticator">
+<method name="getAuthToken" type="()Ljava/lang/String;"/>
+<method name="invalidateAuthToken" type="(Ljava/lang/String;)V"/>
+</interface>
+<interface name="com/android/volley/toolbox/HttpStack">
+<method name="performRequest" type="(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/HttpResponse;"/>
+</interface>
+<interface name="com/android/volley/toolbox/HurlStack$UrlRewriter">
+<method name="rewriteUrl" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+</interface>
+<interface name="com/android/volley/toolbox/ImageLoader$ImageCache">
+<method name="getBitmap" type="(Ljava/lang/String;)Landroid/graphics/Bitmap;"/>
+<method name="putBitmap" type="(Ljava/lang/String;Landroid/graphics/Bitmap;)V"/>
+</interface>
+</signatures>
