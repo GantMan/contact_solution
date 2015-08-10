@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.version       = VERSION
   spec.authors       = ["Gant"]
   spec.email         = ["GantMan@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Contact Solution is your refreshing prescription for RubyMotion Android contacts data.}
+  spec.summary       = %q{Contact Solution is your refreshing prescription for RubyMotion Android contacts data.}
   spec.homepage      = ""
   spec.license       = ""
 
