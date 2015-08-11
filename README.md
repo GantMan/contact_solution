@@ -4,7 +4,7 @@ Contact Solution might _look_ like a joke that keeps getting cornea, but listen 
 
 ## Usage
 
-How many contacts do you have?
+How many contacts do you have (with phone numbers)?
 ```ruby
   mp ContactSolution.all.count
 ```
@@ -52,6 +52,7 @@ Don't forget to add the permission in your Rakefile:
 
       app.permissions += [:read_contacts]
 
+This gem currently depends on [BluePotion](https://github.com/infinitered/bluepotion)
 
 ## Contributing
 
