@@ -131,11 +131,4 @@ class ContactSolution
     mobile_number
   end
 
-  # Jamon's original work, not really sure how close it was, but had trouble with it.
-  # Left here for reference and reuse
-  # def phone_record
-  #   # Revisit this ->   http://stackoverflow.com/questions/3754217/android-manage-contacts-with-lookup-key
-  #   uri = Android::Net::Uri::Builder.new.tap{|b| b.path("content://vnd.android.cursor.dir/phone_v2") }.build
-  #   self.class.context.getContentResolver.query(uri, [ "data1" ], "lookup = ?", [ self.key ], nil)
-  # end
 end

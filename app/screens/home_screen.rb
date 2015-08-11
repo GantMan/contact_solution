@@ -3,6 +3,6 @@ class HomeScreen < PMScreen
   stylesheet HomeScreenStylesheet
 
   def on_load
-    append(Potion::TextView, :hello_label)
+    append(Potion::TextView, :hello_label).data = "You have #{ContactSolution.all.count} contact(s) on this phone."
   end
 end

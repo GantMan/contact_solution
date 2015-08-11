@@ -9,13 +9,13 @@ class HomeScreenStylesheet < ApplicationStylesheet
     st.layout_width = :full
     st.layout_height = :full
     st.gravity = :center
+    st.background_color = color.white
   end
 
   def hello_label(st)
     standard_text_view(st)
     st.font = font.large
     st.color = color.black
-    st.text = "Hello"
   end
 
 end
