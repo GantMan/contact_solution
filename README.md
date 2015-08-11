@@ -1,6 +1,7 @@
-# contact_solution
 
-TODO: Write a gem description
+# contact_solution
+<img src="./_art/contact_solution.png" style="float:left; padding: 20p;" />
+Contact Solution might _look_ like a joke that keeps getting cornea, but listen up my pupil, it's here to save you from having to figure out Android contacts in your RubyMotion project.
 
 ## Installation
 
@@ -12,13 +13,31 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install contact_solution
 
 ## Usage
 
-TODO: Write usage instructions here
+Read a phone number of a contact.
+```ruby
+  # Grab all phones for some contact
+  some_contact = ContactSolution.all.first
+  phones = some_contact.phones
+  # Now read out the first phone (if it has at least 1)
+  if phones.moveToFirst
+    mp ContactSolution.read_number(phones)
+  end
+```
+
+Get some phones!
+```ruby
+  # Grab ALL THE PHONES!!
+  all_phones = ContactSolution.find_phones
+```
+
+Get mobile phone for a particular user.
+```ruby
+  # Give me the first mobile phone
+  ContactSolution.get_number_by_type(some_phones, ContactSolution::PHONE_TYPE_MOBILE)
+```
 
 ## Contributing
 
@@ -26,4 +45,5 @@ TODO: Write usage instructions here
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+5. Put the lotion in the basket
+6. Create new Pull Request
