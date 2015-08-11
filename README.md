@@ -29,11 +29,11 @@ Get some phones!
 Get mobile phone for a particular user.
 ```ruby
   # Give me the first mobile phone
-  ContactSolution.get_number_by_type(some_phones, ContactSolution::PHONE_TYPE_MOBILE)
+  ContactSolution.get_number_by_type(some_contact.phones, ContactSolution::PHONE_TYPE_MOBILE)
   # Give me the first home phone
-  ContactSolution.get_number_by_type(contact.phones, ContactSolution::PHONE_TYPE_HOME)
+  ContactSolution.get_number_by_type(some_contact.phones, ContactSolution::PHONE_TYPE_HOME)
   # Give me the first work phone
-  ContactSolution.get_number_by_type(contact.phones, ContactSolution::PHONE_TYPE_WORK)
+  ContactSolution.get_number_by_type(some_contact.phones, ContactSolution::PHONE_TYPE_WORK)
 ```
 
 Annnnnd more functionality to come. :shipit:
